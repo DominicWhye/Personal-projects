@@ -21,15 +21,18 @@ if __name__ == "__main__":
     target = input("To   (e.g. USD): ").strip().upper()
 
     rates = fetch_rates()
+
+
+
     if base not in rates or target not in rates:
         print(f"Error: rates for {base} or {target} not available.")
         exit(1)
 
-    # 1. Do the user’s amount conversion:
+    #users amount conversion:
     converted_amount = amt / rates[base] * rates[target]
     print(f"\n💵 {amt:.2f} {base} = {converted_amount:.5f} {target}\n")
 
-    # 2. Compute the 1-unit cross-rate both ways:
+    #Compute the 1-unit cross-rate both ways:
     #    rate_base_to_target  = (units of target per USD) / (units of base per USD)
     rate_base_to_target = rates[target] / rates[base]
     #    rate_target_to_base  = inverse
@@ -37,3 +40,17 @@ if __name__ == "__main__":
 
     print(f"💰 1 {base} = {rate_base_to_target:.6f} {target}")
     print(f"💰 1 {target} = {rate_target_to_base:.6f} {base}")
+
+    print() #added blank line for cleaner UI
+    print() #added blank line for cleaner UI
+
+    show_codes = input("Show all available currency codes? (y/n): ").strip().lower()
+    if show_codes == 'y':
+        print() #blank line
+        print("Available currency codes:")
+        print(", ".join(sorted(rates.keys()))) #, is added to make cleaner display
+        print() # blank line
+
+
+
+     
