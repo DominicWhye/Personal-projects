@@ -40,16 +40,15 @@ if __name__ == "__main__":
 
     print(f"💰 1 {base} = {rate_base_to_target:.6f} {target}")
     print(f"💰 1 {target} = {rate_target_to_base:.6f} {base}")
+    print()
 
-    print() #added blank line for cleaner UI
-    print() #added blank line for cleaner UI
 
     show_codes = input("Show all available currency codes? (y/n): ").strip().lower()
-    if show_codes == 'y':
-        print() #blank line
+    if show_codes == 'y' or show_codes == 'yes':
+        print() #added blank line for cleaner UI
         print("Available currency codes:")
         print(", ".join(sorted(rates.keys()))) #, is added to make cleaner display
-        print() # blank line
+        print() #added blank line for cleaner UI
 
 
 
