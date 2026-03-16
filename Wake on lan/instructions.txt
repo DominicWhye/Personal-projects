@@ -1,0 +1,87 @@
+Wake-on-LAN Python Script Guide
+
+This guide explains how to use a small Python script to send a
+Wake-on-LAN (WoL) magic packet to turn on your PC.
+
+------------------------------------------------------------------------
+
+1.  Requirements
+
+You need the following:
+
+-   Python 3 installed
+-   Your PC’s MAC address
+-   Your network broadcast IP
+
+------------------------------------------------------------------------
+2.  Find Your MAC Address
+
+On Windows:
+
+Open Command Prompt and run:
+
+ipconfig /all
+
+Look for:
+
+Physical Address
+
+Example:
+
+3C-52-82-11-22-33
+
+IPv4 Address
+
+Example:
+
+192.168.1.5 (preferred)
+
+
+Replace the MAC and IP address in the script.
+
+------------------------------------------------------------------------
+
+
+3.  Python Code
+
+Change the following codes accordingly:
+
+
+mac = “AA:BB:CC:DD:EE:FF” # your PC MAC address 
+ip = “192.168.1.255” #your network IP address
+
+------------------------------------------------------------------------
+
+
+4.  Run the Script
+
+Open a terminal or command prompt.
+
+Navigate to the folder containing the script.
+
+Run:
+
+python wol.py
+
+Your PC should power on instantly if Wake-on-LAN is enabled.
+
+------------------------------------------------------------------------
+
+5.  Important BIOS / Network Settings
+
+Make sure the following are enabled:
+
+-   Wake-on-LAN in BIOS/UEFI
+-   Wake-on-LAN enabled in your network adapter settings
+-   PC have to be connected via Ethernet (it wont work wirelessly)
+
+------------------------------------------------------------------------
+
+6.  Troubleshooting
+
+If it does not work:
+
+-   Check the MAC address is correct
+-   Ensure your PC was properly shut down 
+-   Make sure Wake-on-LAN is enabled in BIOS
+-   Verify the IP is correct
