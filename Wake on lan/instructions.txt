@@ -81,6 +81,7 @@ Make sure the following are enabled:
 
 If it does not work:
 
+-   If your router uses dynamic or rotating IP addresses, you can alter the IP address to the broadcast IP eg ("xxx.xxx.x.255"), that will send the "Magic packet" to all IP (will only trigger when the Mac adress matches)
 -   Check the MAC address is correct
 -   Ensure your PC was properly shut down 
 -   Make sure Wake-on-LAN is enabled in BIOS
